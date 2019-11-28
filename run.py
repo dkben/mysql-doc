@@ -19,7 +19,7 @@ dbName = cfg['db']['db']
 
 tableList = {}
 
-# git_remote = 'git@203.75.119.252:ben/mysql-doc.git'
+git_remote = 'git@203.75.119.252:ben/mysql-doc.git'
 
 if not os.path.exists('doc'):
     os.makedirs('doc')
