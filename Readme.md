@@ -1,12 +1,13 @@
-### 比對 2 個資料庫裡資料表數量、欄位資訊
+### 匯出 MySQL 資料表說明成為 word 文件
 
-這支小程式只能告訴你差異資訊，讓你知道 2 個資料庫中那裡不同，但仍要靠你手動更改資料庫、資料表欄位
+用 python 匯出 MySQL 資料庫中資料表的說明成為 word docx 文件，用來做驗收文件使用
+
 
 ---
 
 **注意事項**
 
-目前沒有
+要在資料庫明確寫入資料表注釋、欄位注釋才會有註解，否則只是一些基本的欄位型態說明而以
 
 ---
 
@@ -18,36 +19,26 @@ python 3.7
 
 **使用方式**
 
-1. 把 config.yml.sample 拷貝一份為 config.yml，並設定 2 個資料庫
-
-2. 安裝 python3，及 2 個套件
- 
-   `pip install pymysql` 和 `pip install pyyaml`
-
-3. 視安裝環境而定，執行
-
-   `python3 run.py` 或 `python run.py` 
-
-4. 首先會比對 2 個資料庫裡資料表的數量及差異資料表名稱
+1. 把 config.yml.sample 拷貝一份為 config.yml，並設定資料庫
 
    ![image](Readme/001.png)
 
-5. 然後開始比對 2 個資料庫都有的資料表欄位，並顯示差異欄位
+2. 安裝 python3，及 2 個套件
+ 
+   `pip install pymysql` 和 `pip install pyyaml` 和 `pip install python-docx`
 
+3. 視安裝環境而定，執行
+
+   `python3 run.py` 或 `python run.py`
+   
    ![image](Readme/002.png)
 
-6. 比對結束後，再手動處理差異部份 (windows 建議使用 HeidiSQL 處理資料庫)
+4. 文件儲存在 doc 目錄下，以資料庫名稱為檔名
 
    ![image](Readme/003.png)
-
-7. 如果是在終端機中使用，畫面顯示上稍有不同
-
-   ![image](Readme/004.png)
-
-8. 如果有差異的畫面 (windows)
-
-   ![image](Readme/005.png)
    
-9. 比對結果相同的畫面 (windows) 
-
-   ![image](Readme/006.png)
+   ![image](Readme/004.png)
+   
+   ![image](Readme/005.png)      
+   
+5. 手動做封面，或補其它資訊到 word 文件中

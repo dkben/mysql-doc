@@ -21,6 +21,9 @@ tableList = {}
 
 git_remote = 'git@github.com:dkben/diff-db.git'
 
+if not os.path.exists('doc'):
+    os.makedirs('doc')
+
 
 try:
     connections = {
@@ -66,9 +69,9 @@ def check_update():
 
 def main():
     print("============================================================")
-    # check_update()
-    # print("============================================================")
-    # print("開始讀取資料庫...")
+    check_update()
+    print("============================================================")
+    print("開始讀取資料庫並建立檔案...")
     get_tables_and_comment()
     export_docx.create(tableList)
 

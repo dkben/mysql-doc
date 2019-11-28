@@ -44,4 +44,4 @@ def create(tableList):
         document.add_paragraph()
 
     # document.add_page_break()
-    document.save(run.dbName + '.docx')
+    document.save('doc/' + run.dbName + '.docx')
