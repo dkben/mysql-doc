@@ -13,6 +13,7 @@ with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
 host = cfg['db']['host']
+port = cfg['db']['port']
 user = cfg['db']['user']
 password = cfg['db']['password']
 dbName = cfg['db']['db']
@@ -28,6 +29,7 @@ if not os.path.exists('doc'):
 try:
     connections = {
         'conn': pymysql.connect(host=host,
+                                port=port,
                                 user=user,
                                 password=password,
                                 db=dbName,

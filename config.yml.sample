@@ -1,5 +1,6 @@
 db:
     host: ip
+    port: 3306
     user: user
     password: password
     db: db_name

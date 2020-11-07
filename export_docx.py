@@ -20,6 +20,18 @@ document = Document()
 
 
 def create(tableList):
+    table = document.add_table(rows=0, cols=2, style='Table Grid')
+    # table.style = 'Table Grid'
+    hdr_cells = table.add_row().cells
+    hdr_cells[0].text = '資料表'
+    hdr_cells[1].text = '說明'
+    for key, value in tableList.items():
+        row_cells = table.add_row().cells
+        table_name_array = key.split(': ', 1)
+        row_cells[0].text = str(table_name_array[0])
+        row_cells[1].text = str(table_name_array[1])
+    document.add_paragraph()
+
     for key, value in tableList.items():
         table = document.add_table(rows=0, cols=4, style='Table Grid')
         # table.style = 'Table Grid'
