@@ -37,7 +37,11 @@ python 3.7
 
    ![image](Readme/003.png)
    
+   在專案資料夾裡的 doc 裡面可以找到匯出的檔案
+   
    ![image](Readme/004.png)
+   
+   會先列出資料表清單，然後逐一顯示每一張資料表結構
    
    ![image](Readme/005.png)      
    
