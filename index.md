@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+### 匯出 MySQL 資料表說明成為 word 文件
 
-You can use the [editor on GitHub](https://github.com/dkben/mysql-doc/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+用 python 匯出 MySQL 資料庫中資料表的說明成為 word docx 文件，用來做驗收文件使用
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+---
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**注意事項**
 
-```markdown
-Syntax highlighted code block
+要在資料庫明確寫入資料表注釋、欄位注釋才會有註解，否則只是一些基本的欄位型態說明而以
 
-# Header 1
-## Header 2
-### Header 3
+---
 
-- Bulleted
-- List
+**執行環境**
 
-1. Numbered
-2. List
+python 3.7
 
-**Bold** and _Italic_ and `Code` text
+---
 
-[Link](url) and ![Image](src)
-```
+**使用方式**
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+1. 把 config.yml.sample 拷貝一份為 config.yml，並設定資料庫
 
-### Jekyll Themes
+   ![image](Readme/001.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dkben/mysql-doc/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+2. 安裝 python3，及 2 個套件
+ 
+   `pip install pymysql` 和 `pip install pyyaml` 和 `pip install python-docx`
 
-### Support or Contact
+3. 視安裝環境而定，執行
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+   `python3 run.py` 或 `python run.py`
+   
+   ![image](Readme/002.png)
+
+4. 文件儲存在 doc 目錄下，以資料庫名稱為檔名
+
+   ![image](Readme/003.png)
+   
+   在專案資料夾裡的 doc 裡面可以找到匯出的檔案
+   
+   ![image](Readme/004.png)
+   
+   會先列出資料表清單，然後逐一顯示每一張資料表結構
+   
+   ![image](Readme/005.png)      
+   
+5. 手動做封面，或補其它資訊到 word 文件中
